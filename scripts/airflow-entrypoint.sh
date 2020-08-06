@@ -2,6 +2,13 @@
 
 initial-setup.sh
 
+export \
+  AIRFLOW__CORE__EXECUTOR="KubernetesExecutor"\
+  AIRFLOW_HOME="/usr/local/airflow" \
+  AIRFLOW__CORE__DAGS_FOLDER="/usr/local/airflow/dags" \
+  DAGS_FOLDER="/usr/local/airflow/dags"
+
+
 case "${NODE}" in
   "scheduler")
     airflow scheduler
